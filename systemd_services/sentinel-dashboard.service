@@ -1,0 +1,12 @@
+[Unit]
+Description=SentinelAI Dashboard
+After=network.target
+
+[Service]
+User=admin
+WorkingDirectory=/opt/sentinel_dashboard/dashboard
+ExecStart=/opt/sentinel_env/bin/python app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
