@@ -1,0 +1,66 @@
+{
+  "static_ip": "192.168.1.50",
+  "gateway": "192.168.1.1",
+  "telegram_token": "<YOUR_TELEGRAM_BOT_TOKEN>",
+  "telegram_chat_id": "<YOUR_TELEGRAM_CHAT_ID>",
+  "cloud_nodes": [
+    {
+      "name": "Node1",
+      "host": "192.168.1.50",
+      "user": "admin",
+      "ssh_key": "/home/admin/.ssh/id_rsa",
+      "role": "central_dashboard",
+      "services": ["dashboard","agent"]
+    },
+    {
+      "name": "Node2",
+      "host": "192.168.1.51",
+      "user": "admin",
+      "ssh_key": "/home/admin/.ssh/id_rsa",
+      "role": "agent_node",
+      "services": ["agent"]
+    },
+    {
+      "name": "Node3",
+      "host": "192.168.1.52",
+      "user": "admin",
+      "ssh_key": "/home/admin/.ssh/id_rsa",
+      "role": "agent_node",
+      "services": ["agent"]
+    }
+  ],
+  "auto_deploy": {
+    "enabled": true,
+    "repositories": [
+      {
+        "name": "Sentinel Dashboard",
+        "path": "/opt/sentinel_dashboard/dashboard",
+        "install_cmd": "pip install -r requirements.txt",
+        "restart_cmd": "systemctl restart sentinel-dashboard"
+      },
+      {
+        "name": "AI Agent",
+        "path": "/opt/sentinel_dashboard/agent",
+        "install_cmd": "pip install -r requirements.txt",
+        "restart_cmd": "systemctl restart sentinel-agent"
+      }
+    ],
+    "check_interval_seconds": 300
+  },
+  "traffic_optimization": {
+    "enabled": true,
+    "optimize_interval_seconds": 600
+  },
+  "predictive_auto_healing": {
+    "enabled": true,
+    "health_check_interval_seconds": 300
+  },
+  "compliance_monitoring": {
+    "enabled": true,
+    "audit_interval_seconds": 3600
+  },
+  "logging": {
+    "enabled": true,
+    "log_path": "/opt/sentinel_dashboard/logs"
+  }
+}
