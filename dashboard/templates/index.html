@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SentinelAI Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>SentinelAI v5.2 Dashboard</h1>
+    <div id="nodes">
+        {% for node in nodes %}
+            <div class="node-card">
+                <h2>{{ node.name }}</h2>
+                <p>Host: {{ node.host }}</p>
+                <p>Role: {{ node.role }}</p>
+                <p>Services: {{ node.services | join(', ') }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
