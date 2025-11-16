@@ -1,0 +1,6 @@
+{
+    "central_dashboard": "192.168.1.50",
+    "ssh_user": "admin",
+    "ssh_key": "/home/admin/.ssh/id_rsa",
+    "update_interval": 3600
+}
