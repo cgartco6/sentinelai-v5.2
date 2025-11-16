@@ -1,0 +1,12 @@
+[Unit]
+Description=SentinelAI Node Agent
+After=network.target
+
+[Service]
+User=admin
+WorkingDirectory=/opt/sentinel_dashboard/agent
+ExecStart=/opt/sentinel_env/bin/python agent.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
