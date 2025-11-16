@@ -1,0 +1,10 @@
+{
+    "static_ip": "192.168.1.50",
+    "gateway": "192.168.1.1",
+    "telegram_token": "<YOUR_BOT_TOKEN>",
+    "telegram_chat_id": "<YOUR_CHAT_ID>",
+    "cloud_nodes": [
+        {"name":"Node1","host":"192.168.1.50","user":"admin","ssh_key":"/home/admin/.ssh/id_rsa"},
+        {"name":"Node2","host":"192.168.1.51","user":"admin","ssh_key":"/home/admin/.ssh/id_rsa"}
+    ]
+}
